@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func test2Pressed(_ sender: Any) {
-        NSLog("goalarr_count\(goalArr.count)")
+        NSLog("goalarr_countis_\(goalArr.count)")
     }
     
     
