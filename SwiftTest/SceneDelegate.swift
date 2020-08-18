@@ -35,10 +35,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window?.rootViewController = homeVC
             window?.makeKeyAndVisible()
             //welcome view
-            let arr: [Any]? = Goal.GetAllGoal()
-            if arr?.count == nil || arr?.count == 0 {
-                self.window?.rootViewController?.view.addSubview(self.welcomeVC()?.view ?? UIView())
-            }
+            self.window?.rootViewController?.view.addSubview(self.welcomeVC()?.view ?? UIView())
         }
 
     }

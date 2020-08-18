@@ -10,11 +10,14 @@ import UIKit
 import CoreData
 
 class WelcomeVC: UIViewController {
+    @IBOutlet weak var goalLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        goalLabel.text = "goal count\(Goal.GetAllGoal()?.count ?? 0)"
     }
 
     @IBAction func addGoal(_ sender: Any) {
@@ -29,7 +32,6 @@ class WelcomeVC: UIViewController {
             fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
         }
 
-        
     }
     
     
