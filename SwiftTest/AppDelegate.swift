@@ -36,6 +36,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+    
+    @objc func topMostViewcontroller() -> UIViewController? {
+        let scene: UIWindowScene = (UIApplication.shared.connectedScenes.first as! UIWindowScene)
+        let sceneDelegate: UIWindowSceneDelegate = scene.delegate as! UIWindowSceneDelegate
+        let mainWindow: UIWindow? = sceneDelegate.window!
+        var viewController = mainWindow?.rootViewController
+        while ((viewController?.presentedViewController) != nil) {
+            viewController = viewController?.presentedViewController
+        }
+        return viewController
+    }
 
     // MARK: - Core Data stack
 

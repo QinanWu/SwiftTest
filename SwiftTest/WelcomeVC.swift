@@ -37,7 +37,9 @@ class WelcomeVC: UIViewController {
     
     @IBAction func dismiss(_ sender: Any) {
         self.view.removeFromSuperview()
-        let homeVC: ViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(identifier: "ViewController")
+//        let homeVC: ViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(identifier: "ViewController")
+        let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+        let homeVC: ViewController = appDelegate.topMostViewcontroller() as! ViewController
         homeVC.selfviewWillAppear()
     }
     
